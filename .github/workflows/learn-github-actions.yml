@@ -12,5 +12,5 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
       - name: Caminho do diretório
-        run: echo ${{ GITHUB_WORKSPACE }}
+        run: echo (github.workspace, GITHUB_WORKSPACE)
           
