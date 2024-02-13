@@ -2,19 +2,14 @@ name: "Example"
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  example-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: testes
-          description: "Receives file and generates output"
-          inputs:
-            file-path: # id of input
-              description: "Path to test script"
-              required: true
-              default: "test-file.js"
-          outputs:
-            results-file: # id of output
-            description: "Path to results file"
+      - name: Connect to PostgreSQL
+        run: node client.js
+        env:
+          POSTGRES_HOST: postgres
+          POSTGRES_PORT: 5432
+
 
           
