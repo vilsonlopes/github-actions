@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Connect to PostgreSQL
-        run: echo ${{ GITHUB_REPOSITORY }}
+        run: echo "Onde estou $GITHUB_REPOSITORY"
 
 
           
