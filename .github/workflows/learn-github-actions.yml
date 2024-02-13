@@ -6,10 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Connect to PostgreSQL
-        run: node client.js
-        env:
-          POSTGRES_HOST: postgres
-          POSTGRES_PORT: 5432
+        run: echo ${{ GITHUB_REPOSITORY }}
 
 
           
