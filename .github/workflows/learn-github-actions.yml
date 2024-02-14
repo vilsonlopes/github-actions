@@ -27,6 +27,3 @@ jobs:
 
       - name: Executa arquivo principal
         run: python alertaemail.py -v password:${{ secrets.EMAIL_PASSWORD }}
-
-      - name: Apagando arquivo .env
-        run: rm .env
