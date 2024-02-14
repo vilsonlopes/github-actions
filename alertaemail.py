@@ -1,15 +1,10 @@
-import os
 import smtplib
 from email.message import EmailMessage
 
-def send_email(email1, email2, email3='liandro.sys@gmail.com'):
-
+def send_email():
     email_address = 'liandro.sys@gmail.com'
-    email_password
-    contacts = []
-    contacts.append[email1]
-    contacts.append[email2]
-    contacts.append[email3]
+    email_password = ''
+    contacts = ['liandro.sys@gmail.com']
 
     msg = EmailMessage()
     msg['Subject'] = "Testes Actions"
@@ -37,3 +32,4 @@ def send_email(email1, email2, email3='liandro.sys@gmail.com'):
         print(f'Erro ao enviar {e}')
     else:
         print('Email enviado com sucesso!')
+send_email()

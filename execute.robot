@@ -7,9 +7,8 @@ Library         alertaemail.py
 
 *** Keywords ***
 Send Email By Pipeline
-    [Arguments]           ${email1}         ${email2}
-    Send Email            ${email1}        ${email2}
+    Send Email
 
 *** Test Cases ***
-Send Email By Pipeline
-    Send Email By Pipeline    'elainyr.s@gmail.com'    'liandro.arq@gmail.com'
+Send Email
+    Send Email By Pipeline
