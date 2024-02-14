@@ -1,17 +1,20 @@
-import os
+import sys
+# import os
 import smtplib
 from email.message import EmailMessage
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
+
+password = sys.argv
 
 
 def send_mail():
 
     email_address = 'buscadorcaixa@gmail.com'
-    email_password = os.getenv('EMAIL_PASSWORD')
+    email_password = password[1]
 
-    contacts = ["vilsonlopes@yahoo.com.br"]
+    contacts = ["vilsonlopes@yahoo.com.br", "liandro.sys@gmail.com"]
 
     msg = EmailMessage()
     msg['Subject'] = "Testes Actions"

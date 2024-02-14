@@ -21,15 +21,16 @@ jobs:
       - name: Edit .env file
         env:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        run: |
-          touch .env
-          echo EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} >> .env
+#        run: |
+#          touch .env
+#          echo EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} >> .env
+        run: python alertaemail.py ${{ secrets.EMAIL_PASSWORD }}
 
-      - name: Executa arquivo principal
-        run: python alertaemail.py
-
-      - name: Apagando arquivo .env
-        run: rm .env
+#      - name: Executa arquivo principal
+#        run: python alertaemail.py ${{ secrets.EMAIL_PASSWORD }}
+#
+#      - name: Apagando arquivo .env
+#        run: rm .env
 
 
 
