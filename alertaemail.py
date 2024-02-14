@@ -9,7 +9,7 @@ load_dotenv()
 def send_mail():
 
     email_address = 'buscadorcaixa@gmail.com'
-    email_password = "$EMAIL_PASSWORD"
+    email_password = "$env:EMAIL_PASSWORD"
 
     contacts = ["vilsonlopes@yahoo.com.br"]
 
