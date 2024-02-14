@@ -39,3 +39,6 @@ def send_mail():
         print(f'Erro ao enviar {e}')
     else:
         print('Email enviado com sucesso!')
+
+
+send_mail()
