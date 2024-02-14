@@ -1,12 +1,28 @@
-name: "Example"
+name: "MandandoEmail"
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   example-job:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
-      - name: Connect to PostgreSQL
-        run: echo "Onde estou $GITHUB_REPOSITORY"
+      - name: check conteudo do repositorio
+        uses: actions/checkout@v3
+
+      - name: instalar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: instalar os pacotes do requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pip install -r requirements.txt
+
+      - name: Connect a uma função
+        run: python alertaemail.py
+        env:
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+
 
 
           
