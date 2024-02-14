@@ -7,7 +7,7 @@ def send_email():
     contacts = ['liandro.sys@gmail.com']
 
     msg = EmailMessage()
-    msg['Subject'] = "Testes Actions"
+    msg['Subject'] = "Testes Actions utilizando Robot Framework"
     msg['From'] = email_address
     msg['To'] = ','.join(contacts)
 
