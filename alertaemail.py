@@ -37,3 +37,5 @@ def send_email(email1, email2, email3='liandro.sys@gmail.com'):
         print(f'Erro ao enviar {e}')
     else:
         print('Email enviado com sucesso!')
+        
+send_email()
