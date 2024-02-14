@@ -5,7 +5,7 @@ from email.message import EmailMessage
 def send_mail():
 
     email_address = 'liandro.sys@gmail.com'
-    password = ''
+    password = EMAIL_PASSWORD
 
     contacts = ["liandro.sys@gmail.com"]
 
