@@ -1,24 +1,26 @@
+name: "MandandoEmail"
+run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  runs-on: ubuntu-latest
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check conteudo do repositorio
+        uses: actions/checkout@v3
 
-  steps:
-    - name: check conteudo do repositorio
-      uses: actions/checkout@v3
+      - name: instalar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
 
-    - name: instalar python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: instalar os pacotes do requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pip install -r requirements.txt
 
-    - name: instalar os pacotes do requirements.txt
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install pip install -r requirements.txt
+      - name: Edit .env file
+        env:
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
 
-    - name: Edit .env file
-      env:
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-
-    - name: Executa arquivo principal
-      run: python alertaemail.py -v email_password:${{ secrets.EMAIL_PASSWORD }}
+      - name: Executa arquivo principal
+        run: python alertaemail.py -v password:${{ secrets.EMAIL_PASSWORD }}
