@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
   example-job:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: check conteudo do repositorio
         uses: actions/checkout@v3
@@ -18,10 +18,15 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pip install -r requirements.txt
 
-      - name: Connect a uma função
-        run: python alertaemail.py
+      - name: Edit .env file
         env:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        run: |
+          touch .env
+          echo EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} >> .env
+
+      - name: Executa arquivo principal
+        run: python alertaemail.py
 
 
 
