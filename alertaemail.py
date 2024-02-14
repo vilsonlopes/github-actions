@@ -5,7 +5,7 @@ from email.message import EmailMessage
 def send_mail():
 
     email_address = 'liandro.sys@gmail.com'
-    email_password = ''
+    password = ''
 
     contacts = ["liandro.sys@gmail.com"]
 
@@ -28,7 +28,7 @@ def send_mail():
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(email_address, email_password)
+            server.login(email_address, password)
             # server.send_message(msg)
             server.send_message(msg)
     except Exception as e:
