@@ -1,9 +1,9 @@
 import smtplib
 from email.message import EmailMessage
 
-def send_email():
+def send_email(senha):
     email_address = 'liandro.sys@gmail.com'
-    email_password = ''
+    email_password = senha
     contacts = ['liandro.sys@gmail.com']
 
     msg = EmailMessage()
@@ -30,6 +30,7 @@ def send_email():
             server.send_message(msg)
     except Exception as e:
         print(f'Erro ao enviar {e}')
+        return False
     else:
         print('Email enviado com sucesso!')
-send_email()
+        return True
