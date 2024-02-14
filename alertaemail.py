@@ -2,12 +2,11 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-def send_mail():
+def send_mail(email):
 
     email_address = 'liandro.sys@gmail.com'
-    password = ''
-
-    contacts = ["liandro.sys@gmail.com"]
+    email_password = password[1]
+    contacts = [email]
 
     msg = EmailMessage()
     msg['Subject'] = "Testes Actions"
@@ -35,6 +34,3 @@ def send_mail():
         print(f'Erro ao enviar {e}')
     else:
         print('Email enviado com sucesso!')
-
-
-send_mail()
