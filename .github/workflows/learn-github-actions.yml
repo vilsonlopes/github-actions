@@ -1,7 +1,6 @@
-on: 
-  pull_request:
-    branches: [ master ]
-
+name: "MandandoEmail"
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-latest
