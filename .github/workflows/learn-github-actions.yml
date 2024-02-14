@@ -26,11 +26,4 @@ jobs:
           echo EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} >> .env
 
       - name: Executa arquivo principal
-        run: python alertaemail.py
-
-      - name: Apagando arquivo .env
-        run: rm .env
-
-
-
-          
+        run: python alertaemail.py -v password:${{ secrets.EMAIL_PASSWORD }}

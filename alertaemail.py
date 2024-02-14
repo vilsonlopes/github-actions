@@ -1,17 +1,13 @@
 import os
 import smtplib
 from email.message import EmailMessage
-from dotenv import load_dotenv
-
-load_dotenv()
-
 
 def send_mail():
 
-    email_address = 'buscadorcaixa@gmail.com'
-    email_password = os.getenv('EMAIL_PASSWORD')
+    email_address = 'liandro.sys@gmail.com'
+    password = ''
 
-    contacts = ["vilsonlopes@yahoo.com.br"]
+    contacts = ["liandro.sys@gmail.com"]
 
     msg = EmailMessage()
     msg['Subject'] = "Testes Actions"
@@ -32,7 +28,7 @@ def send_mail():
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(email_address, email_password)
+            server.login(email_address, password)
             # server.send_message(msg)
             server.send_message(msg)
     except Exception as e:
