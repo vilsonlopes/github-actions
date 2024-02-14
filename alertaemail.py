@@ -2,11 +2,14 @@ import os
 import smtplib
 from email.message import EmailMessage
 
-def send_mail(email):
+def send_email(email1, email2, email3='liandro.sys@gmail.com'):
 
     email_address = 'liandro.sys@gmail.com'
-    email_password = password[1]
-    contacts = [email]
+    email_password = [1]
+    contacts = []
+    contacts.append[email1]
+    contacts.append[email2]
+    contacts.append[email3]
 
     msg = EmailMessage()
     msg['Subject'] = "Testes Actions"
