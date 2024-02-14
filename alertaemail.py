@@ -5,7 +5,7 @@ from email.message import EmailMessage
 def send_email(email1, email2, email3='liandro.sys@gmail.com'):
 
     email_address = 'liandro.sys@gmail.com'
-    email_password = [1]
+    email_password
     contacts = []
     contacts.append[email1]
     contacts.append[email2]
@@ -30,12 +30,10 @@ def send_email(email1, email2, email3='liandro.sys@gmail.com'):
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login(email_address, password)
+            server.login(email_address, email_password)
             # server.send_message(msg)
             server.send_message(msg)
     except Exception as e:
         print(f'Erro ao enviar {e}')
     else:
         print('Email enviado com sucesso!')
-        
-send_email()
