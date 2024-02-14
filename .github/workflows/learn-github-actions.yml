@@ -28,6 +28,9 @@ jobs:
       - name: Executa arquivo principal
         run: python alertaemail.py
 
+      - name: Apagando arquivo .env
+        run: rm .env
+
 
 
           
