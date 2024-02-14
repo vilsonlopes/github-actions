@@ -1,6 +1,9 @@
 name: "MandandoEmail"
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+on: 
+  pull_request:
+    branches: [ master ]
+
 jobs:
   example-job:
     runs-on: ubuntu-latest
@@ -21,16 +24,6 @@ jobs:
       - name: Edit .env file
         env:
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        run: |
-          touch .env
-          echo EMAIL_PASSWORD=${{ secrets.EMAIL_PASSWORD }} >> .env
 
       - name: Executa arquivo principal
-        run: python alertaemail.py
-
-      - name: Apagando arquivo .env
-        run: rm .env
-
-
-
-          
+        run: python alertaemail.py -v     email_password:${{ secrets.EMAIL_PASSWORD }}
